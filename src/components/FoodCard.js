@@ -1,4 +1,5 @@
 import react from "react";
+import Description from "./Description";
 
 function FoodCard ({ food }) {
 
@@ -14,7 +15,9 @@ function FoodCard ({ food }) {
                     <div className="card_title">{food.name}</div>
                     <p className="card_text">{food.about}</p>
                     <div className="card_detail">
-                        <p>{food.description.type}</p>
+                        <p>
+                            <Description food={food}/>
+                        </p>
                     </div>
                 </div>
             </div>
