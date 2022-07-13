@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import './App.css';
 import Header from "./Header"
 import FoodContainer from './FoodContainer';
+import SubmitFood from './SubmitFood';
 
 function App() {
   const [ foods, setFoods ] = useState([])
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Header /> 
+      <SubmitFood />
       <FoodContainer foods={foods}/>
     </div>
   );
