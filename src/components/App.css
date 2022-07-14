@@ -2,20 +2,35 @@
   text-align: center;
 }
 
-.h1 {
+h1 {
  text-align: center;
- margin-right: 200px;
+ margin-left: 3%;
 }
 
-.card-data {
+.card_data {
   list-style: none;
   background-color: darkgrey;
   height: 550px;
   width: 550px;
-  margin-left: ;
+  margin-bottom: 3%;
 }
 
-.card-image {
+.card_image {
   max-height: 200px;
   max-width: 200px;
+  margin-top: 20px;
+}
+
+.card_content {
+  background-color: white;
+  width: 500px;
+  margin-left: 5%;
+}
+
+.card_title {
+  font-family: Arial Black;
+}
+
+.card_detail {
+  height: 100px;
 }

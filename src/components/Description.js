@@ -1,10 +1,10 @@
 import react from "react";
 
-function Description({ food }) {
+function Description({ description }) {
 
     return(
         <div className="tags">
-            {food.description.type}
+            {description.type}
         </div>
     )
 }

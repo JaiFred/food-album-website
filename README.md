@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+// We are developing an App that displays foods that people have created in an online visual album.
+
+//Album allows user to post a new food entry with name, description, and tags.
+
+//Album allows user to search an entry in the database based on the food name or the tags.
+
+//Album allows user to edit an entry in the database.
+
+//Album allows user to delete an entry. 

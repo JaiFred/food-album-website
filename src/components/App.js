@@ -4,6 +4,7 @@ import './App.css';
 import Header from "./Header"
 import FoodContainer from './FoodContainer';
 import SubmitFood from './SubmitFood';
+import SearchFood from './SearchFood';
 
 function App() {
   const [ foods, setFoods ] = useState([])
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <Header /> 
       <SubmitFood />
+      <SearchFood />
       <FoodContainer foods={foods}/>
     </div>
   );

@@ -2,23 +2,26 @@ import react from "react";
 import Description from "./Description";
 
 function FoodCard ({ food }) {
+    const {id, image, name, timeAdded, about, description } = food
 
     return(
-        <li className="card-data">
+        <li className="card_data" key={id}>
             <div className="card">
                 <img 
-                src={food.image} 
-                alt={food.name} 
-                className="card-image" 
+                src={image} 
+                alt={name} 
+                className="card_image" 
                 />
-                <div className="card-content">
-                    <div className="card_title">{food.name}</div>
-                    <p className="card_text">{food.about}</p>
+                <div className="card_content">
+                    <div className="card_title">{name}</div>
+                    <p className="card_text">{about}</p>
                     <div className="card_detail">
                         <p>
-                            <Description food={food}/>
+                            <Description description={description}/>
                         </p>
                     </div>
+                    <button className="delete_button">Delete Post</button>
+                    <button className="edit_button">Edit Post</button>
                 </div>
             </div>
         </li>
