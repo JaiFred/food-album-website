@@ -1,6 +1,6 @@
 import react from "react";
 
-function SearchFood() {
+function SearchFood({ handleResult }) {
     return(
         <div className="searchbar">
             <label htmlFor="search"></label>
@@ -8,6 +8,7 @@ function SearchFood() {
             type="text"
             id="search"
             placeholder="Type food or tag to search..."
+            onChange={(event) => handleResult(event.target.value)}
             />
         </div>
     )

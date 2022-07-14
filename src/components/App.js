@@ -8,6 +8,7 @@ import SearchFood from './SearchFood';
 
 function App() {
   const [ foods, setFoods ] = useState([])
+  const [ filterFoods, setFilterFoods ] = useState("")
 
   useEffect(() => {
     fetch("http://localhost:3000/Album")
@@ -17,12 +18,22 @@ function App() {
     })
   }, []);
 
+  const handleResult = (findFood) => {
+    setFilterFoods(findFood);
+  }
+
+  const newSearch = foods.filter((food) => {
+    return food.name.toLowerCase().includes(filterFoods.toLowerCase()) ||
+    food.about.toLowerCase().includes(filterFoods.toLowerCase());
+  })
+
+
   return (
     <div className="App">
       <Header /> 
       <SubmitFood />
-      <SearchFood />
-      <FoodContainer foods={foods}/>
+      <SearchFood handleResult={handleResult}/>
+      <FoodContainer foods={newSearch}/>
     </div>
   );
 }

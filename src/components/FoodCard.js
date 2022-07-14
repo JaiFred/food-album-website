@@ -2,7 +2,7 @@ import react from "react";
 import Description from "./Description";
 
 function FoodCard ({ food }) {
-    const {id, image, name, timeAdded, about, description } = food
+    const { id, image, name, timeAdded, about, description } = food
 
     return(
         <li className="card_data" key={id}>
