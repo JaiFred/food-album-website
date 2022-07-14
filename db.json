@@ -1,28 +1,35 @@
 {
-    "Album":[
+  "Album": [
+    {
+      "id": 1,
+      "image": "https://www.thespruceeats.com/thmb/qgPl4vO2z5xWWJcrynzXOGFTHfI=/2434x2434/smart/filters:no_upscale()/spaghettimeatballs-135583313-56bdcea15f9b5829f85ee94a.jpg",
+      "name": "Classic Spaghetti and Meatballs",
+      "timeAdded": "2018-2-14",
+      "about": "My mom was a New York Italian and this was a flavorful dish she loved to make whenever she felt like spoiling us on the weekends.",
+      "description": [
         {
-            "id": 1,
-            "image": "https://www.thespruceeats.com/thmb/qgPl4vO2z5xWWJcrynzXOGFTHfI=/2434x2434/smart/filters:no_upscale()/spaghettimeatballs-135583313-56bdcea15f9b5829f85ee94a.jpg",
-            "name": "Classic Spaghetti and Meatballs",
-            "timeAdded": "2018-2-14",
-            "about": "My mom was a New York Italian and this was a flavorful dish she loved to make whenever she felt like spoiling us on the weekends.",
-            "description":[
-                {
-                    "type": "pasta"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "image":"https://cdn.shopify.com/s/files/1/0148/1945/9126/articles/Shrimp_and_Sausage_Gumbo_720x.jpg?v=1587573605",
-            "name": "Original Lousiana Gumbo",
-            "timeAdded": "2021-8-03",
-            "about":"Always a staple in our household. Passed down from my Great-grandfather to his daughter to my dad and then to me. I make mines with less heat though.",
-            "description":[
-                {
-                    "type": "stew"
-                }
-            ]
+          "type": "pasta"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://cdn.shopify.com/s/files/1/0148/1945/9126/articles/Shrimp_and_Sausage_Gumbo_720x.jpg?v=1587573605",
+      "name": "Original Lousiana Gumbo",
+      "timeAdded": "2021-8-03",
+      "about": "Always a staple in our household. Passed down from my Great-grandfather to his daughter to my dad and then to me. I make mines with less heat though.",
+      "description": [
+        {
+          "type": "stew"
+        }
+      ]
+    },
+    {
+      "name": "Swedish Meatballs",
+      "image": "https://momsdinner.net/wp-content/uploads/2021/11/The-Best-Swedish-Meatballs-1.jpg",
+      "about": "They are my life source",
+      "description": "Meat",
+      "id": 3
+    }
+  ]
 }

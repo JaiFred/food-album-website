@@ -27,11 +27,16 @@ function App() {
     food.about.toLowerCase().includes(filterFoods.toLowerCase());
   })
 
+  function handleAddFood(newFood) {
+    const updatedFoodsArray = [...foods, newFood];
+    setFoods(updatedFoodsArray);
+  }
+
 
   return (
     <div className="App">
-      <Header /> 
-      <SubmitFood />
+      <Header />
+      <SubmitFood handleAddFood={handleAddFood}/>
       <SearchFood handleResult={handleResult}/>
       <FoodContainer foods={newSearch}/>
     </div>
