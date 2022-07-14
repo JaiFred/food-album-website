@@ -22,16 +22,19 @@ function App() {
     setFilterFoods(findFood);
   }
 
+  //Variable that accepts a filter function that filters by food name and food description tag
   const newSearch = foods.filter((food) => {
     return food.name.toLowerCase().includes(filterFoods.toLowerCase()) ||
-    food.about.toLowerCase().includes(filterFoods.toLowerCase());
+    food.description.toLowerCase().includes(filterFoods.toLowerCase());
   })
 
+  //Function that creates a copy on an array and adds new food post to it - prevents mutation
   function handleAddFood(newFood) {
     const updatedFoodsArray = [...foods, newFood];
     setFoods(updatedFoodsArray);
   }
 
+  //function that filters array and deletes a post matching the post id - (foods.id) 
   function handleDeleteFoods(id) {
     const updatedFoodsArray = foods.filter((food) => food.id !== id);
     setFoods(updatedFoodsArray)
@@ -42,7 +45,7 @@ function App() {
       <Header />
       <SubmitFood handleAddFood={handleAddFood}/>
       <SearchFood handleResult={handleResult}/>
-      <FoodContainer foods={newSearch} onDeleteFood={handleDeleteFoods}/>
+      <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods}/>
     </div>
   );
 }

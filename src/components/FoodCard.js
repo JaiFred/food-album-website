@@ -3,12 +3,14 @@ import react from "react";
 function FoodCard ({ food, onDeleteFoods }) {
     const { id, image, name, timeAdded, about, description } = food
 
+    // Deletes post 
     function handleDeleteClick() {
-        let config = {
+        fetch(`http://localhost:3000/Album/${id}`, {
             method: "DELETE",
-        };
-        fetch(`http://localhost:3000/Album/${id}`, config);
-        // onDeleteFoods(id)
+        });
+        onDeleteFoods(id)
+        .then((res) => res.json())
+        .then(onDeleteFoods(id))
     }
 
     return(
@@ -38,15 +40,9 @@ function FoodCard ({ food, onDeleteFoods }) {
                             {description}
                             </p>
                             </div>
-                                <form 
-                                    onSubmit={() => {
-                                        fetch(`http://localhost:3000/Album/${id}`, { 
-                                        method: "DELETE",
-                                        });
-                                    }}
-                                    >
-                                    <button className="delete_button" onSubmit={ handleDeleteClick }>Delete Post</button>
-                                </form>
+                            {/* onClick event that responds to DELETE */}
+                                <button className="delete_button" onClick={handleDeleteClick}>Delete Post</button>
+                            {/* Write onClick event that allows user to edit post */}
                                 <button className="edit_button">Edit Post</button>
                             </div> 
                         </td>
