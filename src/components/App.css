@@ -1,3 +1,7 @@
+html {
+  background: url(/src/images/Kitchen_Background.jpg) repeat center center fixed;
+}
+
 .App {
   text-align: center;
 }
@@ -7,24 +11,51 @@ h1 {
  margin-left: 3%;
 }
 
+.card_space {
+  height: 20%;
+}
+
+
+/* 'tr' table */
+.card_inner_table {
+  background-color: red;
+  max-height: 100%;
+}
+
+.card_image_cell {
+  max-height: 100%;
+}
+
+
 .card_data {
   list-style: none;
   background-color: darkgrey;
-  height: 550px;
-  width: 550px;
+  height: 270px;
+  width: 270px;
   margin-bottom: 3%;
+  margin-right: 3%;
+  float: left;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 .card_image {
-  max-height: 200px;
-  max-width: 200px;
-  margin-top: 20px;
+  max-height: 100px;
+  max-width: 100px;
+  margin-top: 40px;
+  margin-bottom: 3px;
 }
 
 .card_content {
-  background-color: white;
-  width: 500px;
-  margin-left: 5%;
+  background-color: rgba(230, 241, 239, 0.809);
+  border-radius: 20px;
+  max-width: 500px;
+}
+
+.searchbar {
+  margin-left: 50%;
+  display: flex;
+  min-width: 1200px;
 }
 
 .card_title {
@@ -33,4 +64,8 @@ h1 {
 
 .card_detail {
   height: 100px;
+}
+
+.card {
+  height: 20px;
 }

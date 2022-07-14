@@ -32,13 +32,17 @@ function App() {
     setFoods(updatedFoodsArray);
   }
 
+  function handleDeleteFoods(id) {
+    const updatedFoodsArray = foods.filter((food) => food.id !== id);
+    setFoods(updatedFoodsArray)
+  }
 
   return (
     <div className="App">
       <Header />
       <SubmitFood handleAddFood={handleAddFood}/>
       <SearchFood handleResult={handleResult}/>
-      <FoodContainer foods={newSearch}/>
+      <FoodContainer foods={newSearch} onDeleteFood={handleDeleteFoods}/>
     </div>
   );
 }

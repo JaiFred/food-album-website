@@ -3,8 +3,9 @@ import { useState } from 'react'
 
 
 function SubmitFood({ handleAddFood }) {
-  const [ name, setName ] = useState("")
+  const [ id, setId ] = useState ("")
   const [ image, setImage ] = useState("")
+  const [ name, setName ] = useState("")
   const [ about, setAbout ] = useState("")
   const [ description, setDescription ] = useState("")
 
@@ -28,7 +29,17 @@ function SubmitFood({ handleAddFood }) {
     return (
     <form onSubmit={handleSubmit} method="post">
      <ul>
-        <div>
+         <div>
+       <label className="imageinput"></label>
+         <input 
+          type="text" 
+          class="textInput" 
+          id="text2" 
+          placeholder='image' 
+          onChange={(e) => setImage(e.target.value)}
+          />
+         </div>
+         <div>
        <label className="nameinput"></label>
          <input 
           type="text" 
@@ -39,14 +50,10 @@ function SubmitFood({ handleAddFood }) {
           />
          </div>
          <div>
-       <label className="imageinput"></label>
-         <input 
-          type="text" 
-          class="textInput" 
-          id="text2" 
-          placeholder='image' 
-          onChange={(e) => setImage(e.target.value)}
-          />
+           <label className='timeAdded'></label>
+           <input 
+           
+           />
          </div>
          <div>
        <label className="aboutinput"></label>

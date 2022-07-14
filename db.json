@@ -6,11 +6,7 @@
       "name": "Classic Spaghetti and Meatballs",
       "timeAdded": "2018-2-14",
       "about": "My mom was a New York Italian and this was a flavorful dish she loved to make whenever she felt like spoiling us on the weekends.",
-      "description": [
-        {
-          "type": "pasta"
-        }
-      ]
+      "description": "pasta"
     },
     {
       "id": 2,
@@ -18,11 +14,7 @@
       "name": "Original Lousiana Gumbo",
       "timeAdded": "2021-8-03",
       "about": "Always a staple in our household. Passed down from my Great-grandfather to his daughter to my dad and then to me. I make mines with less heat though.",
-      "description": [
-        {
-          "type": "stew"
-        }
-      ]
+      "description": "stew"
     },
     {
       "name": "Swedish Meatballs",
