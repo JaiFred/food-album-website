@@ -48,9 +48,7 @@ function FoodCard ({ food, onDeleteFoods, editMode }) {
                             {/* onClick event that responds to DELETE */}
                                 <button className="delete_button" onClick={handleDeleteClick}>Delete Post</button>
                             {/* Write onClick event that allows user to edit post */}
-                            <Link to={`/Album/${id}/edit`}>
                                 <button className="edit_button" onClick={editClicked}>Edit Post</button>
-                            </Link>
                             </div> 
                         </td>
                     </tr>

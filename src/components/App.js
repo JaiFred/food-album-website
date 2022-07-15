@@ -7,6 +7,7 @@ import FoodContainer from './FoodContainer';
 import SubmitFood from './SubmitFood';
 import SearchFood from './SearchFood';
 import EditFoodCard from './EditFoodCard';
+import { Router } from 'react-router-dom';
 
 function App() {
   const [ foods, setFoods ] = useState([])
@@ -59,14 +60,14 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Switch>
       <SubmitFood handleAddFood={handleAddFood}/>
       <SearchFood handleResult={handleResult}/>
-      <Switch>
-        <Route path="/Album/:id/edit">
-          <EditFoodCard handleEditFood={handleEditFood} />
-        </Route>
-      </Switch>
+      <Route path="/Album/:id/">
+        <EditFoodCard handleEditFood={handleEditFood} />
+      </Route>
       <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods} />
+      </Switch>
     </div>
   );
 }

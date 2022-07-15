@@ -14,15 +14,15 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     const { image, name, about, description } = formData;
 
-    const { id } = useParams()
+    // const { id } = useParams()
 
-    const history = useHistory()
+    // const history = useHistory()
 
-    useEffect(() => {
-    fetch(`http://localhost:3000/Album/${id}`)
-        .then((res) => res.json())
-        .then((food) => setFormData(food));
-    }, []);
+    // useEffect(() => {
+    // fetch(`http://localhost:3000/Album/${id}`)
+    //     .then((res) => res.json())
+    //     .then((food) => setFormData(food));
+    // }, []);
     
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,13 +40,15 @@ const EditFoodCard = ({ handleEditFood }) => {
             body: JSON.stringify(formData)
         }
 
-        fetch(`http://localhost:3000/Album/${id}`, configObj)
-            .then((r) => r.json())
-            .then((editedCard) => {
-                handleEditFood(editedCard);
-                history.push(`/Album/${id}`)
-             });
+    //     fetch(`http://localhost:3000/Album/${id}`, configObj)
+    //         .then((r) => r.json())
+    //         .then((editedCard) => {
+    //             handleEditFood(editedCard);
+    //             history.push(`/Album/${id}`)
+    //          });
     };
+
+
 
     return (
         <form onSubmit={handleSubmit} className="form" autoComplete="off">
