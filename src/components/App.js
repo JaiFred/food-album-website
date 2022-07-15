@@ -5,10 +5,12 @@ import Header from "./Header"
 import FoodContainer from './FoodContainer';
 import SubmitFood from './SubmitFood';
 import SearchFood from './SearchFood';
+import EditFoodCard from './EditFoodCard';
 
 function App() {
   const [ foods, setFoods ] = useState([])
   const [ filterFoods, setFilterFoods ] = useState("")
+  const [ editCard, setEditCard ] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:3000/Album")
@@ -40,12 +42,19 @@ function App() {
     setFoods(updatedFoodsArray)
   }
 
+  //function that edits the food card and updates the description
+  const handleEditFood = (editCard) => {
+    setEditCard(editCard)
+  }
+  
+
   return (
     <div className="App">
       <Header />
       <SubmitFood handleAddFood={handleAddFood}/>
       <SearchFood handleResult={handleResult}/>
-      <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods}/>
+      <EditFoodCard handleEditFood={handleEditFood} />
+      <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods} />
     </div>
   );
 }
