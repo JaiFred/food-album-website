@@ -1,13 +1,13 @@
 import react from 'react';
 import { useState, useEffect } from "react"
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router';
 import'./App.css';
 import Header from "./Header"
 import FoodContainer from './FoodContainer';
 import SubmitFood from './SubmitFood';
 import SearchFood from './SearchFood';
 import EditFoodCard from './EditFoodCard';
-import { Router } from 'react-router-dom';
+import { Router, BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [ foods, setFoods ] = useState([])
@@ -60,14 +60,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Switch>
+      {/* <Switch> */}
       <SubmitFood handleAddFood={handleAddFood}/>
       <SearchFood handleResult={handleResult}/>
-      <Route path="/Album/:id/">
+      {/* <Route path="/Album/:id/"> */}
         <EditFoodCard handleEditFood={handleEditFood} />
-      </Route>
+      {/* </Route> */}
       <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods} />
-      </Switch>
+      {/* </Switch> */}
     </div>
   );
 }

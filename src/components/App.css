@@ -17,10 +17,10 @@ h1 {
 
 
 /* 'tr' table */
-.card_inner_table {
+/* .card_inner_table {
   background-color: red;
-  max-height: 100%;
-}
+  max-height: 10%;
+} */
 
 .card_image_cell {
   max-height: 100%;
@@ -40,9 +40,9 @@ h1 {
 }
 
 .card_image {
-  max-height: 100px;
+  max-height: 50px;
   max-width: 100px;
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 3px;
 }
 
@@ -63,9 +63,9 @@ h1 {
 }
 
 .card_detail {
-  height: 100px;
+  height: 10px;
 }
 
 .card {
-  height: 20px;
+  height: 0px;
 }

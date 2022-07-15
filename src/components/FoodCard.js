@@ -1,5 +1,7 @@
 import react from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 function FoodCard ({ food, onDeleteFoods, editMode }) {
     const { id, image, name, timeAdded, about, description } = food
