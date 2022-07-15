@@ -1,9 +1,9 @@
 import react from "react";
 import FoodCard from "./FoodCard"
 
-function FoodContainer({ foods, onDeleteFoods }) {
+function FoodContainer({ foods, editMode, onDeleteFoods }) {
     const populateFoodContainer = foods.map((food) => (
-        <FoodCard food={ food } onDeleteFoods={onDeleteFoods} />
+        <FoodCard food={ food } onDeleteFoods={onDeleteFoods} editMode={editMode} />
     ))
     return (
         <ul className="food_cards">

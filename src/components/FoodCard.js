@@ -1,7 +1,12 @@
 import react from "react";
+import { Link } from "react-router-dom";
 
-function FoodCard ({ food, onDeleteFoods }) {
+function FoodCard ({ food, onDeleteFoods, editMode }) {
     const { id, image, name, timeAdded, about, description } = food
+
+    const editClicked = () => {
+        editMode(id);
+    };
 
     // Deletes post 
     function handleDeleteClick() {
@@ -43,7 +48,9 @@ function FoodCard ({ food, onDeleteFoods }) {
                             {/* onClick event that responds to DELETE */}
                                 <button className="delete_button" onClick={handleDeleteClick}>Delete Post</button>
                             {/* Write onClick event that allows user to edit post */}
-                                <button className="edit_button">Edit Post</button>
+                            <Link to={`/Album/${id}/edit`}>
+                                <button className="edit_button" onClick={editClicked}>Edit Post</button>
+                            </Link>
                             </div> 
                         </td>
                     </tr>

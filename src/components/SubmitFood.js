@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 function SubmitFood({ handleAddFood }) {
-  const [ id, setId ] = useState ("")
+  // const [ id, setId ] = useState ("")
   const [ image, setImage ] = useState("")
   const [ name, setName ] = useState("")
   const [ about, setAbout ] = useState("")
@@ -17,6 +17,7 @@ function SubmitFood({ handleAddFood }) {
         "Content-Type" : "application/json",
       },
       body: JSON.stringify({
+        // id: id,
         name: name,
         image: image,
         about: about,

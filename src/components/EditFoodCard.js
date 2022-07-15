@@ -1,24 +1,28 @@
 import react from "react";
 import { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
 
 
 const EditFoodCard = ({ handleEditFood }) => {
-    const initialState = {
+    const[formData, setFormData] = useState({
         image: "",
         name: "",
         about: "",
-        description: "",
-    };
+        description: "",  
 
-const[formData, setFormData] = useState(initialState);
+    });
 
-const { image, name, about, description } = formData;
+    const { image, name, about, description } = formData;
 
-useEffect(() => {
-    fetch(`http://localhost:3000/Album/${ handleEditFood }`)
+    const { id } = useParams()
+
+    const history = useHistory()
+
+    useEffect(() => {
+    fetch(`http://localhost:3000/Album/${id}`)
         .then((res) => res.json())
         .then((food) => setFormData(food));
-}, [handleEditFood]);
+    }, []);
     
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -27,8 +31,22 @@ useEffect(() => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        handleEditFood();
-    }
+        const configObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type" : "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(formData)
+        }
+
+        fetch(`http://localhost:3000/Album/${id}`, configObj)
+            .then((r) => r.json())
+            .then((editedCard) => {
+                handleEditFood(editedCard);
+                history.push(`/Album/${id}`)
+             });
+    };
 
     return (
         <form onSubmit={handleSubmit} className="form" autoComplete="off">
@@ -52,7 +70,7 @@ useEffect(() => {
             onChange={handleChange}
             />
 
-        <label htmlFor="about">About</label>
+            <label htmlFor="about">About</label>
                 <input
                 type="text"
                 id="about"
@@ -67,11 +85,11 @@ useEffect(() => {
             name="description"
             value={description}
             onChange={handleChange}
-      />
+            />
 
-            </form>
+            <button type="submit">Edit Entry</button>
+        </form>
     )
-
 }
 
 export default EditFoodCard;

@@ -1,6 +1,7 @@
 import react from 'react';
 import { useState, useEffect } from "react"
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import'./App.css';
 import Header from "./Header"
 import FoodContainer from './FoodContainer';
 import SubmitFood from './SubmitFood';
@@ -10,7 +11,6 @@ import EditFoodCard from './EditFoodCard';
 function App() {
   const [ foods, setFoods ] = useState([])
   const [ filterFoods, setFilterFoods ] = useState("")
-  const [ editCard, setEditCard ] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:3000/Album")
@@ -36,24 +36,36 @@ function App() {
     setFoods(updatedFoodsArray);
   }
 
-  //function that filters array and deletes a post matching the post id - (foods.id) 
-  function handleDeleteFoods(id) {
-    const updatedFoodsArray = foods.filter((food) => food.id !== id);
-    setFoods(updatedFoodsArray)
+  //function that edits the food card and updates the description
+  const handleEditFood = (editedCard) => {
+    const updatedFoodsArray = foods.map((oldFoodCard) => {
+      if (oldFoodCard.id === editedCard.id){
+        return editedCard;
+      } else {
+        return oldFoodCard;
+      }
+    })
+    setFoods(updatedFoodsArray);
   }
 
-  //function that edits the food card and updates the description
-  const handleEditFood = (editCard) => {
-    setEditCard(editCard)
+  //function that filters array and deletes a post matching the post id - (foods.id) 
+  function handleDeleteFoods(id) {
+    const updatedFoodsArray = foods.filter(
+      (food) => food.id !== id
+    );
+    setFoods(updatedFoodsArray)
   }
-  
 
   return (
     <div className="App">
       <Header />
       <SubmitFood handleAddFood={handleAddFood}/>
       <SearchFood handleResult={handleResult}/>
-      <EditFoodCard handleEditFood={handleEditFood} />
+      <Switch>
+        <Route path="/Album/:id/edit">
+          <EditFoodCard handleEditFood={handleEditFood} />
+        </Route>
+      </Switch>
       <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods} />
     </div>
   );
