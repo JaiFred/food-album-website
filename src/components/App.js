@@ -8,6 +8,7 @@ import SubmitFood from './SubmitFood';
 import SearchFood from './SearchFood';
 import EditFoodCard from './EditFoodCard';
 import { Router, BrowserRouter } from 'react-router-dom';
+import FoodCard from './FoodCard';
 
 function App() {
   const [ foods, setFoods ] = useState([])
@@ -70,6 +71,9 @@ function App() {
         </Route>
         <Route exact path="/Album/:id/edit">
           <EditFoodCard handleEditFood={handleEditFood} />
+        </Route>
+        <Route exact path={"/Album/:id"}>
+          <FoodCard />
         </Route>
       </Switch>
       

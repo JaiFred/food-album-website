@@ -46,12 +46,12 @@ const EditFoodCard = ({ handleEditFood }) => {
             body: JSON.stringify(formData)
         }
 
-        // fetch(`http://localhost:3000/Album/${id}`, configObj)
-        //     .then((r) => r.json())
-        //     .then((editedCard) => {
-        //         handleEditFood(editedCard);
-        //         history.push(`/Album/${id}`)
-        //      });
+        fetch(`http://localhost:3000/Album/${id}`, configObj)
+            .then((r) => r.json())
+            .then((editedCard) => {
+                handleEditFood(editedCard);
+                history.push(`/Album/${id}`)
+             });
     };
 
 
@@ -94,9 +94,7 @@ const EditFoodCard = ({ handleEditFood }) => {
             value={description}
             onChange={handleChange}
             />
-            <Link to={`/`}>
-            <button type="submit">Edit Entry</button>
-            </Link>
+            <input type="submit">Edit Entry</input>
         </form>
     )
 }
