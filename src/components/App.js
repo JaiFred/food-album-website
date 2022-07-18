@@ -9,6 +9,7 @@ import SearchFood from './SearchFood';
 import EditFoodCard from './EditFoodCard';
 import { Router, BrowserRouter } from 'react-router-dom';
 import FoodCard from './FoodCard';
+import FoodDetail from './FoodDetail';
 
 function App() {
   const [ foods, setFoods ] = useState([])

@@ -9,6 +9,7 @@ function FoodDetail ({ handleDeleteFoods }) {
 
     const { id } = useParams()
     console.log(id)
+
     useEffect(() => {
     fetch(`http://localhost:3000/Album/${id}`)
         .then((res) => res.json())
@@ -25,7 +26,7 @@ function FoodDetail ({ handleDeleteFoods }) {
         .then((res) => res.json())
         .then(handleDeleteFoods(id))
     }
-    
+
     return(
         <div className="card_space">
             <div className="card_data" key={id}>        
