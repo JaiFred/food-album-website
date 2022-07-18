@@ -5,10 +5,6 @@ import { NavLink } from "react-router-dom";
 
 function FoodCard ({ food, onDeleteFoods, editMode }) {
     const { id, image, name, timeAdded, about, description } = food
-
-    const editClicked = (id) => {
-        editMode(id);
-    };
     
 
     // Deletes post 
@@ -62,7 +58,7 @@ function FoodCard ({ food, onDeleteFoods, editMode }) {
                                 {/* Write onClick event that allows user to edit post */}
                                             <td>
                                                 <Link to={`/Album/${id}/edit`}>
-                                                    <button className="edit_button" onClick={editClicked}>Edit Post</button>
+                                                    <button className="edit_button">Edit Post</button>
                                                 </Link>
                                             </td>
                                         </tr>

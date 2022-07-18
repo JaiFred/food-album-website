@@ -1,7 +1,7 @@
 import react from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 
 const EditFoodCard = ({ handleEditFood }) => {
@@ -13,18 +13,22 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     });
 
-    const { image, name, about, description } = formData;
+    const { id, image, name, about, description } = formData;
 
-    console.log(useParams())
-    const { id } = useParams()
+    // console.log(useParams())
+    // const { index } = useParams()
 
-    // const history = useHistory()
+    const history = useHistory
+    console.log(history)
 
-    // useEffect(() => {
-    // fetch(`http://localhost:3000/Album/${id}`)
-    //     .then((res) => res.json())
-    //     .then((food) => setFormData(food));
-    // }, []);
+    // const location = useLocation()
+    // console.log(location)
+
+    useEffect(() => {
+    fetch(`http://localhost:3000/Album/${id}`)
+        .then((res) => res.json())
+        .then((food) => setFormData(food));
+    }, []);
     
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -42,12 +46,12 @@ const EditFoodCard = ({ handleEditFood }) => {
             body: JSON.stringify(formData)
         }
 
-    //     fetch(`http://localhost:3000/Album/${id}`, configObj)
-    //         .then((r) => r.json())
-    //         .then((editedCard) => {
-    //             handleEditFood(editedCard);
-    //             history.push(`/Album/${id}`)
-    //          });
+        // fetch(`http://localhost:3000/Album/${id}`, configObj)
+        //     .then((r) => r.json())
+        //     .then((editedCard) => {
+        //         handleEditFood(editedCard);
+        //         history.push(`/Album/${id}`)
+        //      });
     };
 
 

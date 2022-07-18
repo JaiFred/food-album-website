@@ -57,16 +57,18 @@ function App() {
     setFoods(updatedFoodsArray)
   }
 
+
+
   return (
     <div className="App">
       <Header />
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <SubmitFood handleAddFood={handleAddFood}/>
           <SearchFood handleResult={handleResult}/>
           <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods} />
         </Route>
-        <Route path="/Album/:id/edit">
+        <Route exact path="/Album/:id/edit">
           <EditFoodCard handleEditFood={handleEditFood} />
         </Route>
       </Switch>
