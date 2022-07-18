@@ -13,8 +13,13 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     const { image, name, about, description } = formData;
 
-   
-    
+    const { id } = useParams()
+    console.log(useParams())
+    useEffect(() => {
+    fetch(`http://localhost:3000/Album/${id}`)
+        .then((res) => res.json())
+        .then((food) => setFormData(food));
+    }, []);
 
     const history = useHistory()
     console.log(history)
@@ -40,14 +45,6 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     // const location = useLocation()
     // console.log(location)
-
-    const { id } = useParams()
-    console.log(useParams())
-    useEffect(() => {
-    fetch(`http://localhost:3000/Album/${id}`)
-        .then((res) => res.json())
-        .then((food) => setFormData(food));
-    }, []);
     
     const handleChange = (e) => {
         const { name, value } = e.target;
