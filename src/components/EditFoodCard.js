@@ -14,7 +14,7 @@ const EditFoodCard = ({ handleEditFood }) => {
     const { image, name, about, description } = formData;
 
     const { id } = useParams()
-    console.log(useParams())
+    console.log(id)
     useEffect(() => {
     fetch(`http://localhost:3000/Album/${id}`)
         .then((res) => res.json())
