@@ -60,14 +60,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Switch> */}
-      <SubmitFood handleAddFood={handleAddFood}/>
-      <SearchFood handleResult={handleResult}/>
-      {/* <Route path="/Album/:id/"> */}
-        <EditFoodCard handleEditFood={handleEditFood} />
-      {/* </Route> */}
-      <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods} />
-      {/* </Switch> */}
+      <Switch>
+        <Route path="/">
+          <SubmitFood handleAddFood={handleAddFood}/>
+          <SearchFood handleResult={handleResult}/>
+          <FoodContainer foods={newSearch} onDeleteFoods={handleDeleteFoods} />
+        </Route>
+        <Route path="/Album/:id/edit">
+          <EditFoodCard handleEditFood={handleEditFood} />
+        </Route>
+      </Switch>
+      
     </div>
   );
 }

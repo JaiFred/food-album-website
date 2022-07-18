@@ -1,4 +1,5 @@
 import react from "react";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
@@ -14,7 +15,8 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     const { image, name, about, description } = formData;
 
-    // const { id } = useParams()
+    console.log(useParams())
+    const { id } = useParams()
 
     // const history = useHistory()
 
@@ -88,8 +90,9 @@ const EditFoodCard = ({ handleEditFood }) => {
             value={description}
             onChange={handleChange}
             />
-
+            <Link to={`/`}>
             <button type="submit">Edit Entry</button>
+            </Link>
         </form>
     )
 }

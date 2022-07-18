@@ -2,7 +2,7 @@ html {
   background: url(/src/images/Kitchen_Background.jpg) repeat center center fixed;
 }
 
-.App {
+ .App {
   text-align: center;
 }
 
@@ -12,20 +12,10 @@ h1 {
 }
 
 .card_space {
-  height: 20%;
+  background-color: brown;
+  height: 100%;
+  width: 100%;
 }
-
-
-/* 'tr' table */
-/* .card_inner_table {
-  background-color: red;
-  max-height: 10%;
-} */
-
-.card_image_cell {
-  max-height: 100%;
-}
-
 
 .card_data {
   list-style: none;
@@ -34,15 +24,137 @@ h1 {
   width: 270px;
   margin-bottom: 3%;
   margin-right: 3%;
+  margin-left: 3%;
+  float: left;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.card {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+}
+
+.food_info_table {
+  width: 100%;
+  height: 100%;
+}
+
+.card_inner_table {
+  background-color: red;
+}
+
+.card_text_cell {
+  height: 100%;
+  width: 100%;
+
+}
+
+.card_title {
+  font-family: Arial Black;
+  margin: 0px;
+}
+
+.card_text {
+  overflow: scroll;
+
+}
+
+.card_inner_table_2 {
+  background-color: blueviolet;
+  height: 100%;
+  width: 100%;
+}
+
+
+.card_image_cell {
+  height: 100px;
+  width: 100px;
+}
+
+.card_image {
+  height: 100%;
+  width: 100px;
+}
+
+
+
+
+
+
+
+.card_content {
+  background-color: rgba(230, 241, 239, 0.809);
+  border-radius: 20px;
+  height: 150px;
+  width: 100%;
+}
+
+.searchbar {
+  margin-left: 50%;
+  display: flex;
+  min-width: 1200px;
+}
+
+.card_detail {
+  background-color: blue;
+  height: 0px;
+}
+
+.card_detail p {
+  margin: 0;
+
+}
+
+.buttons_and_date {
+  height: 5px;
+}
+
+.buttons_and_date_organizer{
+  height: 100%;
+  width: 100%;
+
+}
+
+/* .delete_button {
+
+} */
+
+.card_detail p {
+  margin-top: 0;
+}
+
+
+/* html {
+  background: url(/src/images/Kitchen_Background.jpg) repeat center center fixed;
+}
+
+.App {
+  text-align: center;
+}
+
+.h1 {
+ text-align: center;
+ margin-left: 3%;
+}
+
+.card_data {
+  list-style: none;
+  background-color: darkgrey;
+  height: 350px;
+  width: 350px;
+  margin-bottom: 3%;
+  margin-right: 3%;
   float: left;
   padding: 20px;
   border-radius: 30px;
 }
 
 .card_image {
-  max-height: 50px;
+  max-height: 100px;
   max-width: 100px;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 3px;
 }
 
@@ -50,6 +162,7 @@ h1 {
   background-color: rgba(230, 241, 239, 0.809);
   border-radius: 20px;
   max-width: 500px;
+  width: max-content;
 }
 
 .searchbar {
@@ -63,9 +176,9 @@ h1 {
 }
 
 .card_detail {
-  height: 10px;
+  height: 30px;
 }
 
 .card {
-  height: 0px;
-}
+  height: 20px;
+} */
