@@ -13,9 +13,8 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     const { id, image, name, about, description } = formData;
 
-    // console.log(useParams())
-    // const { index } = useParams()
-
+   
+    
 
     const history = useHistory()
     console.log(history)
@@ -42,6 +41,8 @@ const EditFoodCard = ({ handleEditFood }) => {
     // const location = useLocation()
     // console.log(location)
 
+    const { index } = useParams()
+    console.log(useParams())
     useEffect(() => {
     fetch(`http://localhost:3000/Album/${id}`)
         .then((res) => res.json())
@@ -54,9 +55,6 @@ const EditFoodCard = ({ handleEditFood }) => {
     };
 
     
-
-
-
     return (
         <form onSubmit={handleSubmit} className="form" autoComplete="off">
             <h3>Edit</h3>
