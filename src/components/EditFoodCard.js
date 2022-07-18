@@ -1,7 +1,6 @@
 import react from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
 
 
 const EditFoodCard = ({ handleEditFood }) => {
@@ -10,31 +9,15 @@ const EditFoodCard = ({ handleEditFood }) => {
         name: "",
         about: "",
         description: "",  
-
     });
 
     const { id, image, name, about, description } = formData;
 
     // console.log(useParams())
     // const { index } = useParams()
-
     const history = useHistory
     console.log(history)
-
-    // const location = useLocation()
-    // console.log(location)
-
-    useEffect(() => {
-    fetch(`http://localhost:3000/Album/${id}`)
-        .then((res) => res.json())
-        .then((food) => setFormData(food));
-    }, []);
     
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({...formData, [name]: value })
-    };
-
     function handleSubmit(e) {
         e.preventDefault();
         const configObj = {
@@ -53,6 +36,22 @@ const EditFoodCard = ({ handleEditFood }) => {
                 history.push(`/Album/${id}`)
              });
     };
+
+    // const location = useLocation()
+    // console.log(location)
+
+    useEffect(() => {
+    fetch(`http://localhost:3000/Album/${id}`)
+        .then((res) => res.json())
+        .then((food) => setFormData(food));
+    }, []);
+    
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({...formData, [name]: value })
+    };
+
+    
 
 
 
@@ -94,7 +93,7 @@ const EditFoodCard = ({ handleEditFood }) => {
             value={description}
             onChange={handleChange}
             />
-            <input type="submit">Edit Entry</input>
+            <input type="submit" value="edit" placeholder="Edit Entry"/>
         </form>
     )
 }
