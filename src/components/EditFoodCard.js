@@ -1,5 +1,5 @@
 import react from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
@@ -17,8 +17,8 @@ const EditFoodCard = ({ handleEditFood }) => {
     // const { index } = useParams()
 
 
-    const history = useHistory()
-    console.log(history)
+    const navigate = useNavigate()
+    console.log(navigate)
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -35,7 +35,7 @@ const EditFoodCard = ({ handleEditFood }) => {
             .then((r) => r.json())
             .then((editedCard) => {
                 handleEditFood(editedCard);
-                history.push(`/Album/${id}`)
+                navigate.push(`/Album/${id}`)
              });
     };
 
