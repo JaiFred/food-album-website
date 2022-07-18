@@ -1,11 +1,12 @@
 import react, { useState, useEffect } from "react";
 import { Link, NavLink, useParams} from "react-router-dom";
+import EditFoodCard from "./EditFoodCard";
 
 
 function FoodDetail ({ handleDeleteFoods }) {
     
 
-    const [updatedCard, setUpdatedCard] = useState([null])
+    const [updatedCard, setUpdatedCard] = useState({ id:"", name:"", about:"", description:"" })
 
     const { id } = useParams()
     console.log(id)
@@ -26,6 +27,8 @@ function FoodDetail ({ handleDeleteFoods }) {
         .then((res) => res.json())
         .then(handleDeleteFoods(id))
     }
+
+    if(updatedCard[0] === null) return <h1>Loading</h1>
 
     return(
         <div className="card_space">
