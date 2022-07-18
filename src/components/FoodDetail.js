@@ -25,9 +25,7 @@ function FoodDetail ({ handleDeleteFoods }) {
         .then((res) => res.json())
         .then(handleDeleteFoods(id))
     }
-
-    const { image, name, timeAdded, about, description } = food;
-
+    
     return(
         <div className="card_space">
             <div className="card_data" key={id}>        
