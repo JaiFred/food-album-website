@@ -59,7 +59,9 @@ function FoodDetail ({ handleDeleteFoods }) {
                                  {/* onClick event that responds to DELETE */}
                                         <tr>
                                             <td>
+                                                <Link to={`/`}>
                                                 <button className="delete_button" onClick={handleDeleteClick}>Delete Post</button>
+                                                </Link>
                                             </td>
                                             <td>
                                                 <div className="date_posted">
