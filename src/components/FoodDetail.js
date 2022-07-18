@@ -3,9 +3,9 @@ import { Link, NavLink, useParams} from "react-router-dom";
 
 
 function FoodDetail ({ handleDeleteFoods }) {
-    const { image, name, timeAdded, about, description } = food;
+    
 
-    const [updatedCard, setUpdatedCard] = useState([])
+    const [updatedCard, setUpdatedCard] = useState([null])
 
     const { id } = useParams()
     console.log(id)
@@ -13,7 +13,7 @@ function FoodDetail ({ handleDeleteFoods }) {
     fetch(`http://localhost:3000/Album/${id}`)
         .then((res) => res.json())
         .then((food) => setUpdatedCard(food));
-    }, []);
+    }, [id]);
     
 
     // Deletes post 
@@ -25,6 +25,8 @@ function FoodDetail ({ handleDeleteFoods }) {
         .then((res) => res.json())
         .then(handleDeleteFoods(id))
     }
+
+    const { image, name, timeAdded, about, description } = food;
 
     return(
         <div className="card_space">
