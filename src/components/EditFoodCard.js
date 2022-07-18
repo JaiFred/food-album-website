@@ -90,7 +90,7 @@ const EditFoodCard = ({ handleEditFood }) => {
             value={description}
             onChange={handleChange}
             />
-            <input type="submit" value="edit" placeholder="Edit Entry"/>
+            <input type="submit" value="edit" placeholder="Edit Entry" />
         </form>
     )
 }

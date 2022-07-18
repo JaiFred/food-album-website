@@ -73,7 +73,7 @@ function App() {
           <EditFoodCard handleEditFood={handleEditFood} />
         </Route>
         <Route exact path={"/Album/:id"}>
-          <FoodCard />
+          <FoodDetail handleDeleteFoods={handleDeleteFoods}/>
         </Route>
       </Switch>
       

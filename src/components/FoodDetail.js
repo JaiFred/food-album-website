@@ -1,9 +1,19 @@
-import react from "react";
-import { Link, NavLink } from "react-router-dom";
+import react, { useState, useEffect } from "react";
+import { Link, NavLink, useParams} from "react-router-dom";
 
 
-function FoodCard ({ food, onDeleteFoods }) {
-    const {id, image, name, timeAdded, about, description } = food;
+function FoodDetail ({ handleDeleteFoods }) {
+    const { image, name, timeAdded, about, description } = food;
+
+    const [updatedCard, setUpdatedCard] = useState([])
+
+    const { id } = useParams()
+    console.log(id)
+    useEffect(() => {
+    fetch(`http://localhost:3000/Album/${id}`)
+        .then((res) => res.json())
+        .then((food) => setUpdatedCard(food));
+    }, []);
     
 
     // Deletes post 
@@ -11,9 +21,9 @@ function FoodCard ({ food, onDeleteFoods }) {
         fetch(`http://localhost:3000/Album/${id}`, {
             method: "DELETE",
         });
-        onDeleteFoods(id)
+        handleDeleteFoods(id)
         .then((res) => res.json())
-        .then(onDeleteFoods(id))
+        .then(handleDeleteFoods(id))
     }
 
     return(
@@ -74,4 +84,4 @@ function FoodCard ({ food, onDeleteFoods }) {
     )
 }
 
-export default FoodCard
+export default FoodDetail
