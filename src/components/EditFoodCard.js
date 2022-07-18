@@ -15,9 +15,11 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     // console.log(useParams())
     // const { index } = useParams()
-    const history = useHistory
+
+
+    const history = useHistory()
     console.log(history)
-    
+
     function handleSubmit(e) {
         e.preventDefault();
         const configObj = {
