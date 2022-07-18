@@ -11,7 +11,7 @@ const EditFoodCard = ({ handleEditFood }) => {
         description: "",  
     });
 
-    const { id, image, name, about, description } = formData;
+    const { image, name, about, description } = formData;
 
    
     
@@ -41,7 +41,7 @@ const EditFoodCard = ({ handleEditFood }) => {
     // const location = useLocation()
     // console.log(location)
 
-    const { index } = useParams()
+    const { id } = useParams()
     console.log(useParams())
     useEffect(() => {
     fetch(`http://localhost:3000/Album/${id}`)
