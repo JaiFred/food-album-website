@@ -43,9 +43,6 @@ const EditFoodCard = ({ handleEditFood }) => {
              });
     };
 
-    // const location = useLocation()
-    // console.log(location)
-    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({...formData, [name]: value })
@@ -53,9 +50,11 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     
     return (
-        <form onSubmit={handleSubmit} className="form" autoComplete="off">
+        <form onSubmit={handleSubmit} className="form">
+            
             <h3>Edit</h3>
 
+            <ul>
             <label htmlFor="name">Name</label>
             <input
             type="text"
@@ -90,6 +89,7 @@ const EditFoodCard = ({ handleEditFood }) => {
             value={description}
             onChange={handleChange}
             />
+            </ul>
             <input type="submit" value="edit" placeholder="Edit Entry" />
         </form>
     )

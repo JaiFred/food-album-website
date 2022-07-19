@@ -1,4 +1,3 @@
-import react from "react";
 import FoodCard from "./FoodCard"
 
 function FoodContainer({ foods, onDeleteFoods }) {

@@ -1,15 +1,17 @@
-import react from 'react';
+
 import { useState, useEffect } from "react"
 import { Switch, Route } from 'react-router';
+
+
 import'./App.css';
 import Header from "./Header"
 import FoodContainer from './FoodContainer';
 import SubmitFood from './SubmitFood';
 import SearchFood from './SearchFood';
 import EditFoodCard from './EditFoodCard';
-import { Router, BrowserRouter } from 'react-router-dom';
-import FoodCard from './FoodCard';
 import FoodDetail from './FoodDetail';
+
+
 
 function App() {
   const [ foods, setFoods ] = useState([])
@@ -52,13 +54,13 @@ function App() {
   }
 
   //function that filters array and deletes a post matching the post id - (foods.id) 
-  function handleDeleteFoods(id) {
+  function handleDeleteFoods(deletedCard) {
     const updatedFoodsArray = foods.filter(
-      (food) => food.id !== id
+      (food) => food.id !== deletedCard.id
+      
     );
     setFoods(updatedFoodsArray)
   }
-
 
 
   return (
@@ -74,7 +76,7 @@ function App() {
           <EditFoodCard handleEditFood={handleEditFood} />
         </Route>
         <Route exact path={"/Album/:id"}>
-          <FoodDetail foods={foods} handleDeleteFoods={handleDeleteFoods}/>
+          <FoodDetail onDeleteFoods={handleDeleteFoods}/>
         </Route>
       </Switch>
       

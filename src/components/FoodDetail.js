@@ -1,8 +1,8 @@
-import react, { useState, useEffect } from "react";
-import { Link, NavLink, useParams} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams} from "react-router-dom";
 
 
-function FoodDetail ({ handleDeleteFoods }) {
+function FoodDetail ({ onDeleteFoods }) {
     
 
     const [updatedCard, setUpdatedCard] = useState([])
@@ -11,7 +11,6 @@ function FoodDetail ({ handleDeleteFoods }) {
 
 
     const { id } = useParams()
-    console.log(id)
 
     useEffect(() => {
     fetch(`http://localhost:3000/Album/${id}`)
@@ -25,18 +24,22 @@ function FoodDetail ({ handleDeleteFoods }) {
         fetch(`http://localhost:3000/Album/${id}`, {
             method: "DELETE",
         });
-        handleDeleteFoods(id)
+        onDeleteFoods(updatedCard)
         .then((res) => res.json())
-        .then(handleDeleteFoods(id))
+        .then(() => onDeleteFoods(updatedCard))
     }
 
     return(
         <div className="card_space">
             <div className="card_data" key={id}>        
                 <div className="card">
+                    <Link to={`/`}>
+                        <button className="back_to_Home">Homepage</button>
+                    </Link>
                     <table className="food_info_table">
                         <tr className="card_inner_table"> 
                             <td className="card_image_cell">
+                                
                                 <img 
                                     src={image} 
                                     alt={name} 
