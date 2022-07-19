@@ -10,12 +10,12 @@ function FoodDetail ({ onDeleteFoods }) {
     const { name, image, about, description, timeAdded} = updatedCard
     
     console.log(updatedCard)
-    console.log(onDeleteFoods)
+    // console.log(onDeleteFoods)
     
 
 
     const { id } = useParams()
-    console.log(id)
+    // console.log(id)
 
     useEffect(() => {
     fetch(`http://localhost:3000/Album/${id}`)
@@ -24,13 +24,13 @@ function FoodDetail ({ onDeleteFoods }) {
     }, [id]);
 
     // Deletes post 
-    const handleDeleteClick = () => {
-        fetch(`http://localhost:3000/Album/${id}`, {
-            method: "DELETE",
-        })
-        .then((res) => res.json())
-        .then(onDeleteFoods(updatedCard.id))
-    }
+    // const handleDeleteClick = () => {
+    //     fetch(`http://localhost:3000/Album/${id}`, {
+    //         method: "DELETE",
+    //     })
+    //     .then((res) => res.json())
+    //     .then(onDeleteFoods(updatedCard.id))
+    // }
 
     return(
         <div className="card_space">
@@ -66,9 +66,9 @@ function FoodDetail ({ onDeleteFoods }) {
                                     <table className="buttons_and_date_organizer">
                                  {/* onClick event that responds to DELETE */}
                                         <tr>
-                                            <td>
+                                            {/* <td>
                                                 <button className="delete_button" onClick={handleDeleteClick}>Delete Post</button>
-                                            </td>
+                                            </td> */}
                                             <td>
                                                 <div className="date_posted">
                                                     <p>{timeAdded}</p>
