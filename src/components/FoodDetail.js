@@ -8,25 +8,28 @@ function FoodDetail ({ onDeleteFoods }) {
     const [updatedCard, setUpdatedCard] = useState([])
     
     const { name, image, about, description, timeAdded} = updatedCard
+    
+    console.log(updatedCard)
+    console.log(onDeleteFoods)
+    
 
 
     const { id } = useParams()
+    console.log(id)
 
     useEffect(() => {
     fetch(`http://localhost:3000/Album/${id}`)
         .then((res) => res.json())
         .then((food) => setUpdatedCard(food));
     }, [id]);
-    
 
     // Deletes post 
     const handleDeleteClick = () => {
         fetch(`http://localhost:3000/Album/${id}`, {
             method: "DELETE",
-        });
-        onDeleteFoods(updatedCard)
-        .then((res) => console.log(res))
-        .then(onDeleteFoods(updatedCard))
+        })
+        .then((res) => res.json())
+        .then(onDeleteFoods(updatedCard.id))
     }
 
     return(

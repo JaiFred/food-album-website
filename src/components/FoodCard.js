@@ -7,12 +7,15 @@ function FoodCard ({ food, onDeleteFoods }) {
 
     // Deletes post 
     function handleDeleteClick() {
-        fetch(`http://localhost:3000/Album/${id}`, {
-            method: "DELETE",
-        });
-        onDeleteFoods(id)
+        const reqObj = {
+            method: "DELETE"
+        }
+        fetch(`http://localhost:3000/Album/${id}`, reqObj )
+        // onDeleteFoods(id)
+        // console.log(id)
         .then((res) => res.json())
         .then(onDeleteFoods(id))
+        
     }
 
     return(

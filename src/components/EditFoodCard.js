@@ -50,7 +50,7 @@ const EditFoodCard = ({ handleEditFood }) => {
 
     
     return (
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className="form" autoComplete="on">
             
             <h3>Edit</h3>
 

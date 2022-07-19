@@ -54,9 +54,10 @@ function App() {
   }
 
   //function that filters array and deletes a post matching the post id - (foods.id) 
-  function handleDeleteFoods(deletedCard) {
+  function handleDeleteFoods(deletedID) {
+    // console.log(deletedID)
     const updatedFoodsArray = foods.filter(
-      (food) => food.id !== deletedCard.id
+      (food) => food.id !== deletedID
       
     );
     setFoods(updatedFoodsArray)
