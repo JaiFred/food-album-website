@@ -17,6 +17,13 @@
       "description": "stew"
     },
     {
+      "name": "Swedish Meatballs",
+      "image": "https://momsdinner.net/wp-content/uploads/2021/11/The-Best-Swedish-Meatballs-1.jpg",
+      "about": "They are my life source",
+      "description": "Meat",
+      "id": 3
+    },
+    {
       "name": "pierogi",
       "image": "https://static01.nyt.com/images/2020/04/22/dining/21milkbarrex2/merlin_171379644_8f93d0c8-c7ca-41ae-a8f0-e09b4d0436ad-articleLarge.jpg",
       "about": "Pierogis are the best I can eat them everyday if I wanted to ",

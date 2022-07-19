@@ -20,13 +20,13 @@ function FoodDetail ({ onDeleteFoods }) {
     
 
     // Deletes post 
-    function handleDeleteClick() {
+    const handleDeleteClick = () => {
         fetch(`http://localhost:3000/Album/${id}`, {
             method: "DELETE",
         });
         onDeleteFoods(updatedCard)
-        .then((res) => res.json())
-        .then(() => onDeleteFoods(updatedCard))
+        .then((res) => console.log(res))
+        .then(onDeleteFoods(updatedCard))
     }
 
     return(
