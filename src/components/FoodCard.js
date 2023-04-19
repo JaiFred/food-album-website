@@ -15,7 +15,6 @@ function FoodCard ({ food, onDeleteFoods }) {
         // console.log(id)
         .then((res) => res.json())
         .then(onDeleteFoods(id))
-        
     }
 
     return(
